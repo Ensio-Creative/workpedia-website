@@ -1,0 +1,412 @@
+/* Transitions */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+/* Reuseable stles */
+
+.navbar a {
+  color: #00000080;
+  font-size: 18px;
+}
+
+.nav-img img {
+  width: 60px;
+}
+
+p {
+  color: #00000080;
+}
+/* :root {
+  #251E8C: #251E8C;
+} */
+
+/* ------ ------ Landing page ------- ------ */
+
+.bg-hero {
+  height: 100vh;
+  /* background-color: #f1f1ff; */
+}
+
+.bg-hero h1 {
+  padding: 0px;
+  font-weight: bold;
+  color: var(--bg-dark-blue);
+}
+
+.bg-texts {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.bg-hero p {
+  font-size: 16px;
+  padding: 0px;
+}
+/* .bg-content {
+  width: 339px;
+} */
+
+.bg-buttons {
+  margin-top: 25px;
+}
+
+.bg-buttons a:hover {
+  color: none;
+}
+.bg-buttons-item {
+  margin-right: 10px;
+}
+
+
+.image-rap {
+  margin-top: 35px;
+  height: 116%;
+  overflow: hidden;
+}
+
+/* Let's walk you through */
+.walk-you-through {
+  background-color: #fff;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.heading {
+  padding-top: 0px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.heading h1 {
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--bg-dark-blue);
+}
+
+.walk-column {
+  background-color: #fff;
+  box-shadow: 0px 20px 20px #7682b72e;
+  padding-bottom: 20px;
+  margin-right: 40px;
+  padding-top: 20px;
+}
+.img-head {
+  margin-bottom: 20px;
+}
+.column-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  letter-spacing: 0px;
+  color: #151d41;
+}
+
+.column-text {
+  padding: 10px;
+  color: #151d41;
+}
+.know-btn {
+  background: #251e8c 0% 0% no-repeat padding-box;
+  border-radius: 2px;
+  opacity: 1;
+  padding: 8px;
+  color: #fff;
+}
+.know-btn:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.view-more {
+  text-align: center;
+  padding-top: 80px;
+}
+
+.view-btn {
+  background: #251e8c 0% 0% no-repeat padding-box;
+  opacity: 1;
+  color: #fff;
+  padding: 15px 30px;
+  color: #fff;
+  border-radius: 50px;
+}
+.view-btn:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Freelance gigs */
+.freelancing-gigs {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  color: var(--bg-dark-blue);
+}
+.freelance-heading {
+  padding-top: 0px;
+  padding-bottom: 90px;
+}
+.freelance-column {
+  background-color: #fff;
+  margin-right: 40px;
+  margin-top: 20px;
+  box-shadow: 0px 0px 5px rgba(118, 130, 183, 0.18039);
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+}
+
+.freelance-img-head {
+  padding: 82px;
+  background-position: center;
+  background-size: cover;
+}
+
+.freelance-text h3 {
+  letter-spacing: 0px;
+  color: #151d41;
+  opacity: 1;
+}
+
+.freelance-amount p {
+  letter-spacing: 0px;
+  color: #151d41;
+  opacity: 1;
+}
+
+/* Popular jobs */
+
+.popular-jobs {
+  padding-top: 0px;
+  padding-bottom: 40px;
+}
+
+.popular-column {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 1px rgba(37, 30, 140, 0.2902);
+  /* border-radius: 21px; */
+  word-wrap: break-word;
+  opacity: 1;
+  margin-top: 10px;
+}
+.popular-column-heading {
+  color: #251E8C;
+}
+
+.popular-column-heading i {
+  font-size: 30px;
+  padding-bottom: 10px;
+  padding-top: 20px;
+}
+
+.popular-column-heading h5 {
+  color: #a19d9d;
+}
+
+.popular-text {
+  letter-spacing: 0px;
+  color: #606060;
+}
+
+.popular-text h4 {
+  color: var(--bg-dark-blue);
+}
+
+.popular-durations {
+  display: flex;
+}
+
+.gray-background {
+  padding: 9px 6px 4px 4px;
+  margin-right: 20px;
+  letter-spacing: 0px;
+}
+
+.gray-background:nth-child(1) {
+  color: #07C1DB;
+}
+.gray-background:nth-child(2) {
+  color: #251E8C;
+}
+.gray-background:nth-child(3) {
+  color: #07C1DB;
+}
+.popular-button {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.popular-button a {
+  padding: 9px 30px;
+  letter-spacing: 0px;
+  color: #251E8C;
+  opacity: 1;
+  border: 2px solid #251E8C;
+  border-radius: 2px;
+  opacity: 1;
+}
+
+/* Private-tutors */
+.private-tutor {
+  padding-top: 0px;
+  padding-bottom: 30px;
+}
+.private-tutor-column {
+  background-color: #fff;
+  margin-right: 20px;
+  box-shadow: 0px 0px 5px rgba(118, 130, 183, 0.18039);
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+}
+
+.private-tutor-img-head {
+  padding: 82px;
+  background-position: center;
+  background-size: cover;
+}
+
+
+.private-tutor-text {
+  color: #251e8c;
+  letter-spacing: 0px;
+}
+
+.private-tutor-info p:nth-child(1) {
+  padding-right: 10px;
+  padding-left: 5px;
+}
+
+/* News letter */
+
+.news-letter {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: #f1f1ff;
+}
+
+/* What students say */
+.gray {
+  background-color: #fff;
+  width: 197px;
+}
+.what-student-say {
+  margin-top: 180px;
+  margin-bottom: 80px;
+}
+.round {
+  background: #d8d8d8 0% 0% no-repeat padding-box;
+  padding: 26px;
+  width: 26px;
+  height: 26px;
+  border-radius: 72px;
+}
+
+.what-students-say-column {
+  box-shadow: 0px 0px 5px rgb(0 0 0 / 16%);
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+.filter-input {
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 1px rgba(37,30,140,0.25098);
+  border: #FFFFFF;
+  padding: 4px 33px;
+}
+.filter-btn {
+  background-color: var(--bg-dark-blue);
+  padding: 5px 45px;
+  color: #FFFFFF;
+  box-shadow: 0px 0px 1px var(--bg-dark-blue);
+  border: var(--bg-dark-blue);
+  margin-left: -4px;
+}
+@media screen and (max-width: 780px) {
+  /* ------ ------ Landing page ------- ------ */
+  .header-container {
+    height: 60px;
+    background-color: #fff;
+    margin-bottom: 10px;
+  }
+  .bg-hero {
+    height: 102vh;
+  }
+  .bg-hero h1 {
+    padding: 0px;
+  }
+  .bg-hero p {
+    padding: 0px;
+  }
+  .image-rap {
+    margin-top: 0px;
+    width: 100%;
+    height: 287px;
+  }
+  .bg-buttons {
+    margin-top: 26px;
+  }
+  .bg-buttons-item {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+  }
+  /* Walk you through */
+  .walk-you-through {
+    background-color: #fff !important;
+    padding-top: 42px;
+    padding-bottom: 41px;
+}
+
+  .walk-column {
+    background-color: #fff;
+    margin-right: 0px;
+    margin-top: 10px;
+    box-shadow: 0px 20px 20px #7682b72e;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  /* Freelance */
+  .freelance-column {
+    margin-top: 40px;
+    margin-right: 0px;
+  }
+  .private-tutor-column {
+    margin-right: 0px;
+}
+.private-tutor-info {
+  display: block;
+  padding-bottom: 0px;
+}
+  .private-tutor {
+    padding: 0px;
+  }
+  .filter-input {
+    width: 190px;
+  }
+  /* Jobs */
+  .popular-durations {
+    display: block;
+  }
+  .gray-background{
+    padding: 0px;
+    margin-right: 0px;
+  }
+}
+
+@media screen and (max-width: 988px) {
+  .bg-texts {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .bg-hero h1 {
+    padding: 0px;
+  }
+  .bg-hero p {
+    padding: 0px;
+  }
+}

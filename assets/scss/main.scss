@@ -1,0 +1,105 @@
+// Your variable overrides
+$primary: #251E8C;
+
+// Bootstrap and its default variables
+@import '@/node_modules/bootstrap/scss/bootstrap';
+// BootstrapVue and its default variables
+@import '@/node_modules/bootstrap-vue/src/index.scss';
+
+.network {
+  position: fixed;
+  padding: 20px;
+  background: #fff;
+  bottom: 24px;
+  left: 20px;
+  border-radius: 30px;
+  z-index: 100000;
+  border: 1px solid var(--bg-yellow);
+  i {
+    color: var(--bg-yellow);
+  }
+}
+
+body {
+  background-color: #fff !important;
+}
+
+.multiple-upload {
+  .upload-container {
+    height: 100px !important;
+    width: 100px !important;
+    border: 2px dashed #ccc;
+    border-radius: 5px !important;
+
+    :hover {
+      background-color: #ccc !important;
+    }
+  }
+
+  .input-uploader {
+    opacity: 0;
+    position: absolute;
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  .uploader-icon {
+    width: 35px !important;
+    height: 35px !important;
+  }
+}
+
+.single-upload {
+  .upload-container {
+    height: 100px !important;
+    width: 100px !important;
+    border: 2px dashed #ccc;
+    border-radius: 5px !important;
+
+    :hover {
+      background-color: #ccc !important;
+    }
+  }
+
+  .input-uploader {
+    opacity: 0;
+    position: absolute;
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  .uploader-icon {
+    width: 35px !important;
+    height: 35px !important;
+  }
+}
+
+.dropzone-upload {
+  .upload-container {
+    height: 200px !important;
+    border: 2px dashed #ccc !important;
+    border-radius: 10px !important;
+
+    :hover {
+      background-color: #ccc !important;
+    }
+  }
+
+  .input-uploader {
+    position: absolute;
+    height: 200px !important;
+    width: 93% !important;
+    border-radius: 10px !important;
+    opacity: 0 !important;
+    border: 2px solid balck;
+  }
+
+  .uploader-icon {
+    width: 100px !important;
+    height: 100px !important;
+  }
+}
+.reasons-section p{
+  color: #fff;
+  margin-top: 20px;
+}
