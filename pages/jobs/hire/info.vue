@@ -102,7 +102,7 @@
       <div class="get-started-div mt-5">
         <button
           class="btn btn-outline-primary"
-          @click="$router.push('/jobs/hire')"
+          @click="console.log('Worked')"
         >
           Get Started
         </button>

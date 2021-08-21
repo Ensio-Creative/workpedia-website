@@ -17,63 +17,6 @@
         Create account
       </button>
     </div>
-    <div
-      v-else
-      class="user-is-logged-in"
-    >
-      <div class="dropdown">
-        <a
-          href="#"
-          class="dropbtn"
-        >
-          <div
-            class="userSign-img"
-            :style="{backgroundImage: 'url('+ `${envVarable}/${user.publicId}` +')'}"
-          />
-          <i class="fas fa-chevron-down" />
-        </a>
-        <div
-          v-if="showBar"
-          class="list-of-users-action show-bar"
-          @click="$store.commit('MOBILE_DASH', true)"
-        >
-          <a href="#">
-            <i class="fas fa-bars" />
-          </a>
-        </div>
-        <div
-          v-else
-          class="list-of-users-action show-bar"
-          @click="$store.commit('MOBILE_DASH', false)"
-        >
-          <a href="#">
-            <i class="fas fa-bars" />
-          </a>
-        </div>
-        <div
-          class="dropdown-content text-center"
-        >
-          <NuxtLink
-            v-if="user.token && !user.isAdmin && !user.isOperator"
-            to="/dashboard"
-          >
-            Dashboard
-          </NuxtLink>
-          <NuxtLink
-            v-if="user.isAdmin || user.isOperator"
-            to="/admin"
-          >
-            Admin
-          </NuxtLink>
-          <a
-            href="#"
-            @click="logOut"
-          >
-            Logout
-          </a>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -97,23 +40,10 @@ export default {
       return result
     }
   },
-  mounted () {
-    this.checkPath()
-  },
   methods: {
     // fetchImage()
     hasAccount (value) {
       this.$store.commit('HAS_ACCOUNT', value)
-      this.$router.push('/auth')
-    },
-    checkPath () {
-      if (this.$route.path.includes('/dashboard') || this.$route.path.includes('/admin')) {
-        this.userOnDashboard = false
-        // console.log('I fired!!!!')
-      } else {
-        this.userOnDashboard = true
-        // console.log(this.$route.params.name)
-      }
     },
     showUserDrop () {
       if (this.showUserDroped === true) {

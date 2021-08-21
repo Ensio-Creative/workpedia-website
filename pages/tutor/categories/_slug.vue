@@ -7,8 +7,7 @@
             v-for="tutor in fliteredTutors"
             :key="tutor.title"
           >
-            <NuxtLink
-              :to="`/tutor/${tutor.title}/get-tutor`"
+            <div
               class="col"
             >
               <div class="card h-100">
@@ -29,7 +28,7 @@
                   <small class="text-muted">Last updated 3 mins ago</small>
                 </div> -->
               </div>
-            </NuxtLink>
+            </div>
           </div>
         </div>
       </div>

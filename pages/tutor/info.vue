@@ -102,7 +102,7 @@
       <div class="get-started-div mt-5">
         <button
           class="btn btn-outline-primary"
-          @click="$router.push('/tutor/subject/get-tutor')"
+          @click="console.log('Good')"
         >
           Get Started
         </button>

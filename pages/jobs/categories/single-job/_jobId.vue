@@ -34,9 +34,9 @@
                   </p>
                 </div>
                 <button
-                  v-b-modal.modal-lg
                   type="button"
                   class="btn btn-apply text-center"
+                  @click="console.log('Worked')"
                 >
                   Apply Now
                 </button>
@@ -138,101 +138,18 @@
     <NewsLetter />
     <!-- Footer -->
     <Footer />
-    <!-- Model code -->
-    <!-- The modal -->
-    <b-modal
-      v-if="foundJob"
-      id="modal-lg"
-      size="lg"
-      :cancel-disabled="true"
-      :ok-disabled="true"
-    >
-      <template #modal-title>
-        <h5
-          id="staticBackdropLabel"
-          class="modal-title text-primary"
-        >
-          Application for {{ foundJob.title }}
-        </h5>
-      </template>
-      <div class="contact-info">
-        <!-- User img -->
-        <div class="contact-detail">
-          <div
-            class="user-img"
-            :style="{backgroundImage: 'url('+ `${envVarable}/${user.publicId}` +')'}"
-          />
-        </div>
-        <div class="contact-detail">
-          <!-- User name -->
-          <h6><strong>{{ fullName }}</strong></h6>
-          <!-- User Description -->
-          <p>{{ address }}</p>
-          <!-- User location -->
-          <small class="gray">{{ user.address }} Nigeria</small>
-        </div>
-      </div>
-      <form
-        @submit.prevent="onSubmit"
-      >
-        <!-- Map the user info from vuex -->
-        <div class="row">
-          <div class="col-12 col-md-6">
-            <AppControlInput
-              v-model.trim="email"
-              type="text"
-              required
-            >
-              Email
-            </AppControlInput>
-            <!-- <small
-              :class="[city.length < 3 ? 'info-error' : 'info-success']"
-            >
-              {{ cityInfo }}
-            </small> -->
-          </div>
-          <div class="col-12 col-md-6">
-            <AppControlInput
-              v-model.trim="phone"
-              type="text"
-              required
-            >
-              Phone
-            </AppControlInput>
-            <!-- <small
-              :class="[city.length < 3 ? 'info-error' : 'info-success']"
-            >
-              {{ cityInfo }}
-            </small> -->
-          </div>
-        </div>
-        <div class="p-2">
-          <p>NOTE: We added your CV</p>
-        </div>
-      </form>
-      <template #modal-footer="{ cancel}">
-        <!-- Emulate built in modal footer ok and cancel button actions -->
-        <b-button size="sm" variant="primary" @click="cancel()">
-          Cancel
-        </b-button>
-        <b-button size="sm" variant="primary" @click="onSubmit(foundJob._id, foundJob.companyId, foundJob.userId)">
-          Submit
-        </b-button>
-      </template>
-    </b-modal>
   </div>
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex'
 import logo from '~/assets/img/Workpedia logo transparent (Blue).png'
-import AppControlInput from '~/components/auth/UI-Components/AppControlInput.vue'
 import Footer from '~/components/common/Footer.vue'
 import NewsLetter from '~/components/common/NewsLetter.vue'
 const vars = process.env.cloudinary_Img_Url
 export default {
   name: 'SingleJob',
-  components: { NewsLetter, Footer, AppControlInput },
+  components: { NewsLetter, Footer },
   data () {
     return {
       logo,

@@ -61,7 +61,6 @@
                     {{ lancer.description }}
                   </div>
                   <button
-                    v-b-modal.modal-lg
                     class="btn btn-outline-primary mt-3"
                     @click="getFreelancerId(lancer._id, lancer.userId.firstName, lancer.userId.lastName)"
                   >
@@ -84,65 +83,14 @@
         @change="onPageChanged"
       />
     </div>
-    <b-modal
-      id="modal-lg"
-      size="lg"
-      :cancel-disabled="true"
-      :ok-disabled="true"
-    >
-      <template #modal-title>
-        <h5
-          id="staticBackdropLabel text-primary"
-          class="modal-title"
-        >
-          Get {{ author }}
-        </h5>
-      </template>
-      <div class="contact-info">
-        <!-- Freelancer img -->
-        <div class="contact-detail">
-          <div
-            class="user-img"
-            :style="{backgroundImage: 'url('+ `${envVarables}/${user.publicId}` +')'}"
-          />
-        </div>
-        <div class="contact-detail">
-          <!-- Freelancer name -->
-          <h5><strong>{{ `${user.firstName} ${user.lastName}` }}</strong></h5>
-          <!-- Freelancer Description -->
-          <p>{{ `${user.state} ${user.city}` }}</p>
-          <!-- Freelancer location -->
-          <small class="gray">Nigeria</small>
-        </div>
-      </div>
-      <AppTextarea
-        v-model.trim="message"
-        type="text"
-        placeholder="Add message"
-        required
-      >
-        Add message
-      </AppTextarea>
-      <template #modal-footer="{ cancel }">
-        <!-- Emulate built in modal footer ok and cancel button actions -->
-        <b-button size="sm" variant="primary" @click="cancel()">
-          Cancel
-        </b-button>
-        <b-button size="sm" variant="primary" @click="onSubmit">
-          Send
-        </b-button>
-      </template>
-    </b-modal>
   </div>
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex'
-import AppTextarea from '~/components/auth/UI-Components/AppTextarea.vue'
 const vars = process.env.cloudinary_Img_Url
 export default {
   name: 'FreelanceList',
-  components: { AppTextarea },
   props: {
     freelancers: {
       type: Array,
