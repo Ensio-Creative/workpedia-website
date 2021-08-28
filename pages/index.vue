@@ -135,7 +135,7 @@ export default {
     async fetchData () {
       const res = await this.$axios.$get('public/get-data')
       this.UPDATE_FREELANCING(res.freelancers)
-      this.UPDATE_FREELANCING_SETTING(res.freelanceCategory.categories)
+      this.UPDATE_FREELANCING_CATEGORIES(res.freelanceCategories)
       this.UPDATE_JOBS(res.jobs)
       this.UPDATE_TUTOR_ROUTES(res.tutorCategories)
     }

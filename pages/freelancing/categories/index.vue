@@ -5,7 +5,7 @@
       <div class="container">
         <div class="row row-cols-1 row-cols-md-3 g-4">
           <div
-            v-for="route in routes"
+            v-for="route in freelanceCategories"
             :key="route.url"
             class="col mt-4"
           >
@@ -51,11 +51,11 @@ export default {
     }
   },
   computed: {
-    ...mapState('freelance', ['freelancing', 'freelanceCategory'])
-  },
-  mounted () {
-    this.routes = this.freelanceCategory
+    ...mapState('freelance', ['freelancing', 'freelanceCategories'])
   }
+  // mounted () {
+  //   this.routes = this.freelanceCategory
+  // }
 }
 </script>
 

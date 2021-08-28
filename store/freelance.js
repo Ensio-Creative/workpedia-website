@@ -1,7 +1,7 @@
 export const state = () => ({
   freelancing: [],
   freelancer: {},
-  freelanceCategory: []
+  freelanceCategories: []
 })
 
 export const mutations = {
@@ -14,8 +14,8 @@ export const mutations = {
   UPDATE_FREELANCING (state, payload) {
     state.freelancing = payload
   },
-  UPDATE_FREELANCING_SETTING (state, payload) {
-    state.freelanceCategory = payload
+  UPDATE_FREELANCING_CATEGORIES (state, payload) {
+    state.freelanceCategories = payload
   }
 }
 

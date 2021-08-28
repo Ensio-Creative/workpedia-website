@@ -24,7 +24,7 @@ export default {
       }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/icon.png' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
         href: 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css'
@@ -93,11 +93,12 @@ export default {
     common: {
       Accept: 'application/json, text/plain, */*'
     }
-    // baseURL: process.env.BASE_URL || 'http://localhost:8000/'
+    // baseURL: process.env.BASE_URL || '/'
   },
 
   env: {
     BASE_URL: 'https://workpedia-io.herokuapp.com',
+    DASHBOARD_URL: 'https://workpedia-io.herokuapp.com',
     cloudinary_Img_Url: 'https://res.cloudinary.com/workpedia-africa/image/upload',
     cloudinary_doc_Url: 'https://res.cloudinary.com/workpedia-africa/image/upload'
   },
