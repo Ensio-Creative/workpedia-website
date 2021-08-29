@@ -281,6 +281,10 @@ export const actions = {
     }
   },
 
+  pushToDashboard () {
+    window.location.href = process.env.DASHBOARD_URL
+  },
+
   async verifyBvn ({ state }, payload) {
     try {
       const userId = state.user._id

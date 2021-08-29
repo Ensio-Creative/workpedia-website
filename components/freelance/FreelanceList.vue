@@ -62,7 +62,7 @@
                   </div>
                   <button
                     class="btn btn-outline-primary mt-3"
-                    @click="getFreelancerId(lancer._id, lancer.userId.firstName, lancer.userId.lastName)"
+                    @click="goToDashboard"
                   >
                     Message {{ `${lancer.userId.firstName} ${lancer.userId.lastName}` }}
                   </button>
@@ -125,6 +125,10 @@ export default {
   },
   methods: {
     ...mapActions('freelance', ['sendMessage']),
+    ...mapActions('auth', ['pushToDashboard']),
+    goToDashboard () {
+      this.pushToDashboard()
+    },
     paginate (pageSize, pageNumber) {
       const itemsToParse = this.freelancers
       this.paginatedResults = itemsToParse.slice(

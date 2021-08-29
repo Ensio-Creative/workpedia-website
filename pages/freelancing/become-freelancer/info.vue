@@ -58,7 +58,7 @@
       <div class="get-started-div mt-5">
         <button
           class="btn btn-outline-primary"
-          @click="$router.push('/freelancing/become-freelancer')"
+          @click="goToDashboard"
         >
           Get Started
         </button>
@@ -70,6 +70,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import Footer from '~/components/common/Footer.vue'
 import NewsLetter from '~/components/common/NewsLetter.vue'
 export default {
@@ -77,6 +78,12 @@ export default {
   data () {
     return {
       info: ''
+    }
+  },
+  methods: {
+    ...mapActions('auth', ['pushToDashboard']),
+    goToDashboard () {
+      this.pushToDashboard()
     }
   }
 }

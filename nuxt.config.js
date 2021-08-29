@@ -98,7 +98,7 @@ export default {
 
   env: {
     BASE_URL: 'https://workpedia-io.herokuapp.com',
-    DASHBOARD_URL: 'https://workpedia-io.herokuapp.com',
+    DASHBOARD_URL: 'dashboard.workpedia.io/auth',
     cloudinary_Img_Url: 'https://res.cloudinary.com/workpedia-africa/image/upload',
     cloudinary_doc_Url: 'https://res.cloudinary.com/workpedia-africa/image/upload'
   },

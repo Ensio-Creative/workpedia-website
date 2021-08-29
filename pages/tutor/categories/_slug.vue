@@ -9,6 +9,7 @@
           >
             <div
               class="col"
+              @click="goToDashboard"
             >
               <div class="card h-100">
                 <!-- <img :src="tutor.image" alt="DID not"> -->
@@ -45,7 +46,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 import Footer from '~/components/common/Footer.vue'
 import NewsLetter from '~/components/common/NewsLetter.vue'
 const vars = process.env.cloudinary_Img_Url
@@ -64,6 +65,12 @@ export default {
       const result = this.tutorRoutes.find(category => category.url === this.routeUrl)
       const categorie = result.subCategory
       return categorie
+    }
+  },
+  methods: {
+    ...mapActions('auth', ['pushToDashboard']),
+    goToDashboard (value) {
+      this.pushToDashboard()
     }
   }
 }

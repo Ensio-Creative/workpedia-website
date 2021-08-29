@@ -36,7 +36,7 @@
                 <button
                   type="button"
                   class="btn btn-apply text-center"
-                  @click="console.log('Worked')"
+                  @click="goToDashboard"
                 >
                   Apply Now
                 </button>
@@ -189,6 +189,10 @@ export default {
   },
   methods: {
     ...mapActions('applicant', ['sendApplication']),
+    ...mapActions('auth', ['pushToDashboard']),
+    goToDashboard () {
+      this.pushToDashboard()
+    },
     onSubmit (jobID, companyID, userID) {
       if (!this.user.token) {
         this.$store.commit('HAS_ACCOUNT', false)

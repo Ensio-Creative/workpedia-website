@@ -1,18 +1,17 @@
 <template>
   <div>
     <div
-      v-if="!user.token"
       class="user-not-logged-in"
     >
       <button
         class="btn landing-outline ml-3"
-        @click="hasAccount(true)"
+        @click="goToDashboard(true)"
       >
         Login
       </button>
       <button
         class="btn landing-outline ml-1"
-        @click="hasAccount(false)"
+        @click="goToDashboard(false)"
       >
         Create account
       </button>
@@ -21,7 +20,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 const vars = process.env.cloudinary_Img_Url
 export default {
   name: 'UserRegister',
@@ -42,8 +41,9 @@ export default {
   },
   methods: {
     // fetchImage()
-    hasAccount (value) {
-      this.$store.commit('HAS_ACCOUNT', value)
+    ...mapActions('auth', ['pushToDashboard']),
+    goToDashboard (value) {
+      this.pushToDashboard()
     },
     showUserDrop () {
       if (this.showUserDroped === true) {
