@@ -58,7 +58,7 @@ export default {
     }
   },
   computed: {
-    ...mapState('freelance', ['freelanceCategory']),
+    ...mapState('freelance', ['freelanceCategories']),
     ...mapState('tutors', ['tutorRoutes']),
     routes () {
       let route = ''
@@ -111,7 +111,7 @@ export default {
     }
   },
   mounted () {
-    this.freelanceRoutes = this.freelanceCategory
+    this.freelanceRoutes = this.freelanceCategories
     this.tutors = this.tutorRoutes
   }
 }
