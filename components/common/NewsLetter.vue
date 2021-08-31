@@ -69,6 +69,9 @@ export default {
 </script>
 
 <style scoped>
+h3 {
+  color: var(--bg-dark-blue);
+}
 .news-paragraph{
   padding: 20px 232px 10px 232px;
 }
