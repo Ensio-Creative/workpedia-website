@@ -13,12 +13,15 @@
           </div>
           <client-only>
             <div
-              v-if="!user.token"
               class="bg-buttons"
             >
-              <NuxtLink class="view-btn" to="/auth">
+              <a
+                class="view-btn"
+                href="#"
+                @click="pushToDashboard"
+              >
                 Get Started
-              </NuxtLink>
+              </a>
             </div>
           </client-only>
         </div>
@@ -99,7 +102,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapMutations, mapActions } from 'vuex'
 import Footer from '../components/common/Footer.vue'
 import NewsLetter from '../components/common/NewsLetter.vue'
 import Walk from '../components/landing/Walk.vue'
@@ -123,8 +126,12 @@ export default {
   },
   methods: {
     ...mapMutations('jobs', ['UPDATE_JOBS']),
-    ...mapMutations('freelance', ['UPDATE_FREELANCING', 'UPDATE_FREELANCING_SETTING']),
+    ...mapMutations('freelance', ['UPDATE_FREELANCING', 'UPDATE_FREELANCING_CATEGORIES']),
     ...mapMutations('tutors', ['UPDATE_TUTOR_ROUTES']),
+    ...mapActions('auth', ['pushToDashboard']),
+    goToDashboard () {
+      this.pushToDashboard()
+    },
     checkUSer () {
       if (!this.user.token) {
         this.isLogged = false
