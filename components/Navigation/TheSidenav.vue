@@ -57,18 +57,17 @@
             </a>
           </li>
           <li
-            v-if="!user.token"
             class="nav-item"
           >
             <button
               class="btn landing-outline"
-              @click="hasAccount(true)"
+              @click="goToDashboard"
             >
               Login
             </button>
             <button
               class="btn landing-outline mt-3"
-              @click="hasAccount(false)"
+              @click="goToDashboard"
             >
               Create account
             </button>
@@ -80,7 +79,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 import homeNav from '~/static/baseNav/home.js'
 import tutorNav from '~/static/baseNav/tutor.js'
 import jobsNav from '~/static/baseNav/jobs.js'
@@ -138,6 +137,10 @@ export default {
   // },
   methods: {
     // Here are the functions used by there names
+    ...mapActions('auth', ['pushToDashboard']),
+    goToDashboard (value) {
+      this.pushToDashboard()
+    },
     checkTutorNav () {
       if (this.user.isTutor) {
         this.tutor = this.tutorNav.filter(tutorRoute => tutorRoute.url !== '/tutor/become-a-tutor')
@@ -163,7 +166,7 @@ export default {
       }
     },
     logOut () {
-      this.$router.push('/')
+      this.$router.push('/auth')
       this.$store.commit('CLEAR_USER')
     },
     hasAccount (value) {

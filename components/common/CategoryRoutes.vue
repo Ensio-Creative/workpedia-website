@@ -63,10 +63,10 @@ export default {
     routes () {
       let route = ''
       if (this.$route.path.includes('/tutor')) {
-        const sliceRoutes = this.tutors.slice(0, 7)
+        const sliceRoutes = this.tutors.slice(0, 4)
         route = sliceRoutes
       } else if (this.$route.path.includes('/freelancing')) {
-        const sliceRoutes = this.freelanceRoutes.slice(0, 7)
+        const sliceRoutes = this.freelanceRoutes.slice(0, 4)
         route = sliceRoutes
       }
       return route
@@ -179,5 +179,8 @@ export default {
   .bg-freelance-categories {
     height: 26vh;
   }
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+  font-size: 17px;
 }
 </style>

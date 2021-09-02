@@ -205,14 +205,14 @@ hr {
   }
   .footer-text {
     padding-top: 30px;
-    font-size: 17px;
+    font-size: 13px;
   }
   .footer-nav-item{
     display: block;
     color: #fff;
     line-height: 2;
     padding: 5px;
-    font-size: 17px;
+    font-size: 13px;
   }
   .all-rights {
     display: block;
@@ -226,7 +226,7 @@ hr {
     margin-top: 20px;
   }
   .mobile-margin-top{
-    font-size: 17px;
+    font-size: 13px;
   }
 @media screen and (min-width: 994px) {
   .footer-title{
