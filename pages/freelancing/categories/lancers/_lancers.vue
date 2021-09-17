@@ -24,7 +24,7 @@ export default {
   components: { NewsLetter, Footer },
   data () {
     return {
-      routeUrl: this.$route.params.slug
+      routeUrl: this.$route.params.lancers
     }
   },
   computed: {

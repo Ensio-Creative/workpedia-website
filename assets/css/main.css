@@ -395,7 +395,9 @@ p {
   }
   .gray-background{
     padding: 0px;
-    margin-right: 0px;
+  }
+  .popular-durations {
+    display: block ruby;
   }
 }
 

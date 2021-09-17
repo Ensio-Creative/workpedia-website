@@ -59,9 +59,9 @@
         <div class="row">
           <div class="col-12 col-md-12 col-lg-6 order-6 order-sm-2 learn-more-grid">
             <h2 class="title">
-              Apply for Jobs
+              Get connected to the best of Jobs
             </h2>
-            <p>Workpedia seemlessly connects employers and vetted qualified employees in one place.</p>
+            <p>Workpedia seamlessly connects employers and vetted qualified employees in one place.</p>
             <NuxtLink
               to="/jobs"
             >

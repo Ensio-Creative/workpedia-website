@@ -192,6 +192,6 @@ export default {
 .nav-item a:hover,
 .nav-item a:active,
 .nav-item a.NuxtLink-active {
-  color: var(--bg-dark-blue);
+  color: rgb(138, 138, 138);
 }
 </style>

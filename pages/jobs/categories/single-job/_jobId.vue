@@ -96,7 +96,7 @@
       </div>
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div
-          v-for="job in randomJobs.slice(0, 3)"
+          v-for="job in randomJobs.slice(0, 9)"
           :key="job._id"
           class="col mt-4"
         >
@@ -186,12 +186,30 @@ export default {
   mounted () {
     this.email = this.user.email
     this.phone = this.user.phone
+    this.shuffle(this.jobs)
   },
   methods: {
     ...mapActions('applicant', ['sendApplication']),
     ...mapActions('auth', ['pushToDashboard']),
     goToDashboard () {
       this.pushToDashboard()
+    },
+    shuffle (array) {
+      let currentIndex = array.length
+      let randomIndex
+
+      // While there remain elements to shuffle...
+      while (currentIndex !== 0) {
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex)
+        currentIndex--
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+          array[randomIndex], array[currentIndex]]
+      }
+
+      return array
     },
     onSubmit (jobID, companyID, userID) {
       if (!this.user.token) {

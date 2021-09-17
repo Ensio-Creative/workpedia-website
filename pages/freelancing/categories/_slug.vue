@@ -68,4 +68,10 @@ export default {
 .categorie {
   margin-bottom: 8rem;
 }
+.thumbnail{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px;
+}
 </style>

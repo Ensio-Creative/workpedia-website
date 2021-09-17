@@ -22,7 +22,7 @@
                 class="freelancer-skills text-center mb-4"
               >
                 <span
-                  v-for="skill in lancer.skills.split(',')"
+                  v-for="skill in lancer.skills.split(',').slice(0, 7)"
                   :key="skill"
                   class="skills mt-2"
                 >
@@ -135,7 +135,7 @@ export default {
         pageNumber * pageSize,
         (pageNumber + 1) * pageSize
       )
-      console.log(this.paginatedResults)
+      // console.log(this.paginatedResults)
     },
     onPageChanged (page) {
       this.paginate(this.perPage, page - 1)

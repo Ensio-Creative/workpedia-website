@@ -58,7 +58,7 @@
                 <ul>
                   <li>Create your profile and post available jobs in your organization.</li>
                   <li>You will receive CVs based on the posted job requirements.</li>
-                  <li>Vet and invite successful applicants for interview.</li>
+                  <li>Invite successful applicants for interview.</li>
                 </ul>
               </div>
             </div>

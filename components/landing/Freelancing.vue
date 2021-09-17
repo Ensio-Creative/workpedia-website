@@ -6,7 +6,7 @@
       </div>
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div
-          v-for="freelance in splicedFreelancing"
+          v-for="freelance in splicedFreelancing.slice(0, 12)"
           :key="freelance._id"
           class="col mt-4"
         >
@@ -21,7 +21,7 @@
               </div>
               <div class="freelance-amount">
                 <span
-                  v-for="skill in freelance.skills.split(',')"
+                  v-for="skill in freelance.skills.split(',').slice(0, 7)"
                   :key="skill"
                   class="skills mt-2"
                 >
@@ -62,6 +62,28 @@ export default {
     splicedFreelancing () {
       const listed = this.freelancing
       return listed
+    }
+  },
+  mounted () {
+    this.shuffle(this.freelancing)
+  },
+  methods: {
+    shuffle (array) {
+      let currentIndex = array.length
+      let randomIndex
+
+      // While there remain elements to shuffle...
+      while (currentIndex !== 0) {
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex)
+        currentIndex--
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+          array[randomIndex], array[currentIndex]]
+      }
+
+      return array
     }
   }
 }
