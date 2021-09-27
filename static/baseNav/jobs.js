@@ -1,5 +1,9 @@
 export default [
   {
+    title: 'Home',
+    url: '/'
+  },
+  {
     title: 'Jobs',
     url: '/jobs/categories'
   },

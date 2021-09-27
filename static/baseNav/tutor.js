@@ -1,7 +1,7 @@
 export default [
   {
-    title: 'Categories',
-    url: '/tutor/categories'
+    title: 'Home',
+    url: '/'
   },
   {
     title: 'Hire a Tutor',
