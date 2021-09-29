@@ -4,6 +4,10 @@ export default [
     url: '/'
   },
   {
+    title: 'Categories',
+    url: '/tutor/categories'
+  },
+  {
     title: 'Hire a Tutor',
     url: '/tutor/info'
   },

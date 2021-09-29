@@ -7,7 +7,9 @@
         </NuxtLink>
       </div>
       <TheSideNavToggle @toggle="$emit('sidenavToggle')" />
-      <div class="navigation-items">
+      <div
+        :class="[$route.path.includes('/tutor') ? 'navigation-items-tutor' : 'navigation-items']"
+      >
         <ul class="nav-list">
           <li
             v-for="links in routes"
@@ -137,6 +139,10 @@ export default {
   display: none;
 }
 
+.navigation-items-tutor {
+  display: none;
+}
+
 @media (min-width: 994px) {
   .header-container {
     position: fixed;
@@ -153,7 +159,7 @@ export default {
   }
   .navigation-items-tutor {
     display: flex;
-    width: 790px;
+    width: 745px;
     justify-content: space-between;
   }
   .header-container {
@@ -172,7 +178,7 @@ export default {
 .nav-item {
   margin: 0 10px;
   padding-top: 5px;
-  padding-left: 30px;
+  padding-left: 5px;
 }
 .nav-item-tutor {
   margin: 0 10px;
@@ -189,6 +195,11 @@ export default {
   color: var(--bg-dark-blue);
 }
 
+.nav-item-tutor a:hover,
+.nav-item-tutor a:active,
+.nav-item-tutor a.NuxtLink-active {
+  color: rgb(138, 138, 138);
+}
 .nav-item a:hover,
 .nav-item a:active,
 .nav-item a.NuxtLink-active {

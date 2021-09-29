@@ -1,7 +1,10 @@
 export const state = () => ({
   freelancing: [],
   freelancer: {},
-  freelanceCategories: []
+  freelanceCategories: [],
+  freelanceCategoriesSearch: [],
+  subCategories: [],
+  subCategoriesSearch: []
 })
 
 export const mutations = {
@@ -16,6 +19,17 @@ export const mutations = {
   },
   UPDATE_FREELANCING_CATEGORIES (state, payload) {
     state.freelanceCategories = payload
+    state.freelanceCategoriesSearch = payload
+  },
+  UPDATE_FREELANCING_CATEGORIES_SEARCH (state, payload) {
+    state.freelanceCategoriesSearch = payload
+  },
+  UPDATE_FREELANCING_CATEGORIES_SUB (state, payload) {
+    state.subCategories = payload
+    state.subCategoriesSearch = payload
+  },
+  UPDATE_FREELANCING_CATEGORIES_SUB_SEARCH (state, payload) {
+    state.subCategoriesSearch = payload
   }
 }
 
@@ -205,5 +219,29 @@ export const actions = {
         this.$toast.error('Something went wrong')
       }
     }
+  },
+
+  searchCategories ({ commit, state }, payload) {
+    const categories = state.freelanceCategories.filter(categories => categories.title.toLowerCase().includes(payload.toLowerCase()))
+    console.log(categories)
+    if (!categories.length) {
+      // state.freelanceCategoriesSearch = state.freelanceCategories
+      commit('UPDATE_FREELANCING_CATEGORIES_SEARCH', state.freelanceCategories)
+      // this.$toast.info('Category not found')
+      return
+    }
+    commit('UPDATE_FREELANCING_CATEGORIES_SEARCH', categories)
+  },
+
+  searchCategoriesSub ({ commit, state }, payload) {
+    const categories = state.subCategories.filter(categories => categories.title.toLowerCase().includes(payload.toLowerCase()))
+    console.log(categories)
+    if (!categories.length) {
+      // state.freelanceCategoriesSearch = state.freelanceCategories
+      commit('UPDATE_FREELANCING_CATEGORIES_SUB_SEARCH', state.subCategories)
+      // this.$toast.info('Category not found')
+      return
+    }
+    commit('UPDATE_FREELANCING_CATEGORIES_SUB_SEARCH', categories)
   }
 }

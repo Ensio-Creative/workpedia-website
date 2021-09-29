@@ -282,7 +282,8 @@ export const actions = {
   },
 
   pushToDashboard () {
-    window.open(process.env.DASHBOARD_URL)
+    // window.open(process.env.DASHBOARD_URL)
+    window.location.href = process.env.DASHBOARD_URL
   },
 
   async verifyBvn ({ state }, payload) {

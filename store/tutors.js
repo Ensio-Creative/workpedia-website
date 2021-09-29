@@ -2,7 +2,8 @@ export const state = () => ({
   tutor: {},
   startInfo: {},
   requestTutorInfo: {},
-  tutorRoutes: []
+  tutorRoutes: [],
+  tutorRoutesSearch: []
 })
 
 export const mutations = {
@@ -26,6 +27,10 @@ export const mutations = {
   },
   UPDATE_TUTOR_ROUTES (state, payload) {
     state.tutorRoutes = payload
+    state.tutorRoutesSearch = payload
+  },
+  UPDATE_TUTOR_ROUTES_SEARCH (state, payload) {
+    state.tutorRoutesSearch = payload
   },
   UPDATE_CV (state, payload) {
     state.tutor.cvUrl = payload
@@ -199,5 +204,17 @@ export const actions = {
         this.$toast.error('Something went wrong')
       }
     }
+  },
+
+  searchTutorCategories ({ commit, state }, payload) {
+    const categories = state.tutorRoutes.filter(categories => categories.title.toLowerCase().includes(payload.toLowerCase()))
+    console.log(payload)
+    if (!categories.length) {
+      // state.freelanceCategoriesSearch = state.freelanceCategories
+      commit('UPDATE_TUTOR_ROUTES_SEARCH', state.tutorRoutes)
+      // this.$toast.info('Category not found')
+      return
+    }
+    commit('UPDATE_TUTOR_ROUTES_SEARCH', categories)
   }
 }

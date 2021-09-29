@@ -6,12 +6,13 @@
           class="row row-cols-1 row-cols-md-3 g-4"
         >
           <div
-            v-for="route in tutorRoutes"
+            v-for="route in tutorRoutesSearch"
             :key="route.url"
             class="col mt-3"
           >
-            <NuxtLink
-              :to="`/tutor/categories/${route.url}`"
+            <a
+              href="#"
+              @click="goToDashboard"
             >
               <div class="card h-100">
                 <div
@@ -27,7 +28,7 @@
                   <small class="text-muted">Last updated 3 mins ago</small>
                 </div> -->
               </div>
-            </NuxtLink>
+            </a>
           </div>
         </div>
       </div>
@@ -42,7 +43,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 import Footer from '~/components/common/Footer.vue'
 import NewsLetter from '~/components/common/NewsLetter.vue'
 const vars = process.env.cloudinary_Img_Url
@@ -56,7 +57,13 @@ export default {
     }
   },
   computed: {
-    ...mapState('tutors', ['tutorRoutes'])
+    ...mapState('tutors', ['tutorRoutesSearch'])
+  },
+  methods: {
+    ...mapActions('auth', ['pushToDashboard']),
+    goToDashboard (value) {
+      this.pushToDashboard()
+    }
   }
 }
 </script>

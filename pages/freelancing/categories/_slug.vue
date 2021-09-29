@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row row-cols-1 row-cols-md-3 g-4">
           <div
-            v-for="route in fliteredFreelancing"
+            v-for="route in subCategoriesSearch"
             :key="route.url"
             class="col mt-4"
           >
@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 import Footer from '~/components/common/Footer.vue'
 import NewsLetter from '~/components/common/NewsLetter.vue'
 const vars = process.env.cloudinary_Img_Url
@@ -46,15 +46,34 @@ export default {
   data () {
     return {
       routeUrl: this.$route.params.slug,
-      envVarables: vars
+      envVarables: vars,
+      category: []
     }
   },
   computed: {
-    ...mapState('freelance', ['freelanceCategories']),
+    ...mapState('freelance', ['freelanceCategories', 'subCategoriesSearch'])
+    // ...mapMutations('freelance', ['UPDATE_FREELANCING_CATEGORIES_SUB']),
+    // fliteredFreelancing () {
+    //   const result = this.freelanceCategories.find(category => category.url === this.routeUrl)
+    //   const categories = result.subCategory
+    //   // this.UPDATE_FREELANCING_CATEGORIES_SUB(categories)
+    //   return categories
+    // }
+  },
+  watch: {
+    routeUrl: {
+      immediate: true,
+      handler () {
+        this.fliteredFreelancing()
+      }
+    }
+  },
+  methods: {
+    ...mapMutations('freelance', ['UPDATE_FREELANCING_CATEGORIES_SUB']),
     fliteredFreelancing () {
       const result = this.freelanceCategories.find(category => category.url === this.routeUrl)
       const categories = result.subCategory
-      return categories
+      this.UPDATE_FREELANCING_CATEGORIES_SUB(categories)
     }
   }
 }

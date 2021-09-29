@@ -40,6 +40,30 @@
             >
               {{ route.title }}
             </NuxtLink>
+            <input
+              v-if="$route.path.includes('/tutor/categories')"
+              v-model="searchTutorInput"
+              class="filter-input"
+              type="search"
+              placeholder="Search"
+              @input="searchTutor"
+            >
+            <input
+              v-if="$route.path === '/freelancing/categories'"
+              v-model="searchFreelanceInput"
+              class="filter-input"
+              type="search"
+              placeholder="Search"
+              @input="searchFreelance"
+            >
+            <input
+              v-if="$route.path.includes('/freelancing/categories/')"
+              v-model="searchFreelanceInputSub"
+              class="filter-input"
+              type="search"
+              placeholder="Search"
+              @input="searchFreelanceSub"
+            >
           </ul>
         </div>
       </div>
@@ -48,13 +72,17 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 export default {
   name: 'CategoryRoutes',
   data () {
     return {
       freelanceRoutes: [],
-      tutors: []
+      tutors: [],
+      search: '',
+      searchTutorInput: '',
+      searchFreelanceInput: '',
+      searchFreelanceInputSub: ''
     }
   },
   computed: {
@@ -63,10 +91,10 @@ export default {
     routes () {
       let route = ''
       if (this.$route.path.includes('/tutor')) {
-        const sliceRoutes = this.tutors.slice(0, 4)
+        const sliceRoutes = this.tutors.slice(0, 0)
         route = sliceRoutes
       } else if (this.$route.path.includes('/freelancing')) {
-        const sliceRoutes = this.freelanceRoutes.slice(0, 4)
+        const sliceRoutes = this.freelanceRoutes.slice(0, 2)
         route = sliceRoutes
       }
       return route
@@ -113,6 +141,22 @@ export default {
   mounted () {
     this.freelanceRoutes = this.freelanceCategories
     this.tutors = this.tutorRoutes
+  },
+  methods: {
+    ...mapActions('freelance', ['searchCategories', 'searchCategoriesSub']),
+    ...mapActions('tutors', ['searchTutorCategories']),
+    searchTutor () {
+      this.searchTutorCategories(this.searchTutorInput)
+      // console.log(this.searchFreelanceInput)
+    },
+    searchFreelance () {
+      this.searchCategories(this.searchFreelanceInput)
+      // console.log(this.searchFreelanceInput)
+    },
+    searchFreelanceSub () {
+      this.searchCategoriesSub(this.searchFreelanceInputSub)
+      // console.log(this.searchFreelanceInputSub, 'sub')
+    }
   }
 }
 </script>

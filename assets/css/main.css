@@ -317,6 +317,7 @@ p {
   box-shadow: 0px 0px 1px rgba(37,30,140,0.25098);
   border: #FFFFFF;
   padding: 4px 33px;
+  font-size: 13px;
 }
 .filter-btn {
   background-color: var(--bg-dark-blue);

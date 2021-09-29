@@ -34,7 +34,7 @@
             </div>
             <div class="popular-durations">
               <span class="gray-background">
-                <h6>{{ $moment(job.createdAt).format('LL') }}</h6>
+                <h6>{{ $moment(job.createdAt).format("MMM Do YY") }}</h6>
               </span>
               <span class="gray-background">
                 <h6>{{ job.duration }}</h6>
