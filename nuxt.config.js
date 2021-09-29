@@ -31,6 +31,10 @@ export default {
       }
     ]
   },
+  loading: {
+    color: '#251E8C'
+  },
+
   loadingIndicator: {
     name: 'chasing-dots',
     color: '#251E8C',
