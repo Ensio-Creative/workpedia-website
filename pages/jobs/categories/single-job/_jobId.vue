@@ -29,9 +29,7 @@
                 </div>
                 <div class="popular-text mt-3 mb-4">
                   <h4>Job Description</h4>
-                  <p>
-                    {{ foundJob.description }}
-                  </p>
+                  <p v-html="foundJob.description"/>
                 </div>
                 <button
                   type="button"
