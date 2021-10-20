@@ -79,6 +79,14 @@ export default {
     'vue-social-sharing/nuxt'
   ],
 
+  googleAnalytics: {
+    id: 'UA-207184361-1',
+    autoTracking: {
+      screenview: true
+    },
+    checkDuplicatedScript: true
+  },
+
   io: {
     sockets: [ // Required
       { // At least one entry is required
