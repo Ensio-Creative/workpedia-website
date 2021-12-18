@@ -60,7 +60,7 @@
 import Footer from '~/components/common/Footer.vue'
 export default {
   name: 'Contact',
-  scrollToTop: true,
+  // scrollToTop: true,
   components: { Footer }
 }
 </script>

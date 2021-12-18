@@ -31,6 +31,12 @@ export default {
       }
     ]
   },
+  router: {
+    scrollBehavior: (to, from, savedPosition) => {
+      return { x: 0, y: 0 }
+    }
+  },
+
   loading: {
     color: '#251E8C'
   },

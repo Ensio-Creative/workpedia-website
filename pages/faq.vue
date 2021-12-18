@@ -149,7 +149,7 @@ import Footer from '~/components/common/Footer.vue'
 import NewsLetter from '~/components/common/NewsLetter.vue'
 export default {
   name: 'FAQ',
-  scrollToTop: true,
+  // scrollToTop: true,
   components: { Footer, NewsLetter }
 }
 </script>
