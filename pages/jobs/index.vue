@@ -115,6 +115,7 @@ import NewsLetter from '~/components/common/NewsLetter.vue'
 import Popular from '~/components/landing/Popular.vue'
 export default {
   name: 'Jobs',
+  scrollToTop: true,
   components: { Footer, NewsLetter, Popular },
   data () {
     return {}

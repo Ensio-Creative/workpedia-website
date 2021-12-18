@@ -108,6 +108,7 @@ import NewsLetter from '../components/common/NewsLetter.vue'
 import Walk from '../components/landing/Walk.vue'
 export default {
   name: 'Home',
+  scrollToTop: true,
   components: { Walk, NewsLetter, Footer },
   data () {
     return {

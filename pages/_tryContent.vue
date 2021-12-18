@@ -42,6 +42,7 @@ import Footer from '~/components/common/Footer.vue'
 import NewsLetter from '~/components/common/NewsLetter.vue'
 export default {
   name: 'TryContent',
+  scrollToTop: true,
   components: { Footer, NewsLetter },
   data () {
     return {

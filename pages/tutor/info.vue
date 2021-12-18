@@ -118,6 +118,7 @@ import { mapActions } from 'vuex'
 import Footer from '~/components/common/Footer.vue'
 import NewsLetter from '~/components/common/NewsLetter.vue'
 export default {
+  scrollToTop: true,
   components: { NewsLetter, Footer },
   data () {
     return {

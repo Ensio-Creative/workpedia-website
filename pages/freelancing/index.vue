@@ -105,6 +105,7 @@ import NewsLetter from '~/components/common/NewsLetter.vue'
 import Freelancing from '~/components/landing/Freelancing.vue'
 export default {
   name: 'FreelanceingLandingPage',
+  scrollToTop: true,
   components: { NewsLetter, Footer, Freelancing },
   data () {
     return {
